@@ -1,8 +1,0 @@
-RewriteEngine on
-
-RewriteCond %{REQUEST_SCHEME}://%{HTTP_HOST}%{REQUEST_URI}#$0 ^:?(.*)/(.*)#(\2)$
-
-# Files
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule ^(.*)$ index.php?route=$0&base_url=%1 [QSA,L]
-
