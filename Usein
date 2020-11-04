@@ -1,0 +1,40 @@
+#!/usr/bin/env php
+<?php
+
+
+
+
+
+$help =
+  "
+- require edit config/databas.php [server => localhost] to [server => 127.0.0.1]
+\n
+- What you Do: migrate \n
+    Migration All Tables from /Migration/Migrate.php
+";
+echo "What you Do: ";
+
+
+
+
+// open command line input user
+$handle = fopen("php://stdin", "r");
+// use input user and get value from user
+
+$line = fgets($handle);
+
+switch (trim($line)) {
+
+  case 'create':
+    echo "\n Enter Name Controller: ";
+    $name = fgets($handle);
+    echo $name;
+    shell_exec("touch ./Controllers/$name" . '.php');
+    break;
+  case 'help':
+    echo $help;
+    break;
+  case 'migrate':
+    require_once 'Migration/Migrate.php';
+    break;
+}
