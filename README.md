@@ -1,2 +1,2 @@
 # rodir
-Router and Ajax Project
+Simple Router and Ajax Project framework
